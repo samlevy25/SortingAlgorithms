@@ -1,5 +1,4 @@
-#k = [4, -33, 12, -44, 4, 13, 11]
-k = [9.8, 0.6, 10.1, 1.9, 3.07, 3.04, 5.0, 8.0, 4.8, 7.68]
+k = [4, -33, 12, -44, 4, 13, 11]
 
 
 def selectionSort(list):  # Θ(𝑛^2)
@@ -77,5 +76,13 @@ def countingSorting(arr):  # Θ(n + k)
     return arr
 
 
+def radixSorting(arr):
+    max_, exp = max(arr), 1
+
+    while max_ / exp > 0:
+        countingSorting(arr)
+        exp *= 10
+    return arr
 
 
+print(radixSort(k))
